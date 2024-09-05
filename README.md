@@ -21,7 +21,7 @@ This is a simple MVP (Minimum Viable Product) for a Job Teaser Generator. It all
 - User accounts and saved teasers
 
 ## Contact
-[Your Name or Username] - [Your Email or LinkedIn profile]
+Jon - jgwynne7@gmail.com
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).# Job-teaser-mvpoo1
