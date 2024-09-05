@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,22 +6,38 @@
     <title>Job Teaser Generator</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        input, button { font-size: 16px; padding: 10px; margin: 10px 0; }
-        #teaserResult { margin-top: 20px; border: 1px solid #ddd; padding: 10px; }
+        label, input, textarea, select { display: block; width: 100%; margin-bottom: 10px; }
+        input, textarea, select { padding: 5px; }
+        button { padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
     <h1>Job Teaser Generator</h1>
-    <input type="text" id="jobUrl" placeholder="Paste job ad URL here">
-    <button onclick="generateTeaser()">Generate Teaser</button>
+    <form id="jobTeaserForm">
+        <label for="jobUrl">Job Ad URL:</label>
+        <input type="url" id="jobUrl" name="jobUrl" required>
+
+        <label for="jobAdText">Paste Job Ad Text Here:</label>
+        <textarea id="jobAdText" name="jobAdText" rows="10" required></textarea>
+
+        <label for="teaserTemplate">Teaser Template:</label>
+        <select id="teaserTemplate" name="teaserTemplate">
+            <option value="standard">Standard</option>
+            <option value="minimal">Minimal</option>
+            <option value="detailed">Detailed</option>
+        </select>
+
+        <button type="submit">Generate Teaser</button>
+    </form>
+
     <div id="teaserResult"></div>
 
     <script>
-        function generateTeaser() {
-            var url = document.getElementById('jobUrl').value;
-            var result = "This is a teaser for the job at: " + url;
-            document.getElementById('teaserResult').innerHTML = result;
-        }
+        document.getElementById('jobTeaserForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would add code to process the job ad text and generate the teaser
+            alert('Form submitted! Teaser generation logic to be implemented.');
+        });
     </script>
 </body>
 </html>
